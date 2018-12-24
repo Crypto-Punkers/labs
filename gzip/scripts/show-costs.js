@@ -32,17 +32,20 @@ module.exports = function(callback) {
      * inTransaction()
      */
     const deflatedArticle = (await deflate(ARTICLE)).toString("hex");
+    // Data to call the function of the contract
     const encodedABI = instance.contract.methods.inTransaction().encodeABI();
+    // Length of the article padded to 8 bytes so it's constant in length
     const hexLength = deflatedArticle.length.toString(16).padStart(16, "0");
     const txData = encodedABI + deflatedArticle + hexLength;
-    // A bug in truffle-contract makes this impossible  https://github.com/trufflesuite/truffle/issues/1586
+    // We can't use truffle-contract directly because it resets the data paremeter
+    // https://github.com/trufflesuite/truffle/issues/1586
     // Using web3 directly
     const web3 = Example.web3;
     const inTransactionCost = (await web3.eth.sendTransaction({
       from: (await web3.eth.getAccounts())[0],
       to: instance.address,
-      data: encodedABI,
-      gas: 4000000 // Just a big number
+      data: txData,
+      gas: 4000000 // A random big number
     })).gasUsed;
 
     /*
