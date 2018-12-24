@@ -1,0 +1,16 @@
+{
+  "name": "@punkers/prototypes-gzip",
+  "version": "1.0.0",
+  "main": "add-article.ts",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "truffle compile",
+    "clean": "rimraf build/"
+  },
+  "dependencies": {
+    "lorem-ipsum": "^1.0.6",
+    "rimraf": "^2.6.2",
+    "truffle": "^5.0.0"
+  }
+}
