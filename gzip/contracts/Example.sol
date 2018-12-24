@@ -12,8 +12,8 @@ contract Example {
   }
 
   function inArray(string calldata content) external  {
-    articleArray.push(content);
     emit ArticleAddedInArray(articleArray.length);
+    articleArray.push(content);
   }
 
   function inEvent(string calldata content) external {

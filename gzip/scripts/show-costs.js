@@ -1,7 +1,6 @@
 module.exports = function(callback) {
   const { promisify } = require("util");
   const zlib = require("zlib");
-  const inflate = promisify(zlib.inflate);
   const deflate = promisify(zlib.deflate);
   const loremIpsum = require("lorem-ipsum");
 
