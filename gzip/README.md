@@ -1,8 +1,6 @@
 # Gzip Proof of Concept
 
-Decreasing costs of putting data on blockchain
-
-===
+_Decreasing costs of putting data on blockchain_
 
 This project is a result of research into how to put articles on the blockchain on the cheap while still allowing to later get an index of all articles and retrieve them.
 
