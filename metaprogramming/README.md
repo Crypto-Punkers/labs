@@ -2,7 +2,7 @@
 
 This project is a result of research to understand Typescript metaprogramming capabilities. Resulting in showcase that Typescript Types are Turing Complete.
 
-We showcase this by first simulating Addition and Substraction in [`math.ts`](./src/math) and moving further into a more complext algorithm. Inside [`brackets.ts`](./src/brackets.ts) we run an algorith to detect whether a given bracket statement is valid or not.
+We showcase this by first simulating Addition and Substraction in [`math.ts`](./src/math.ts) and moving further into a more complext algorithm. Inside [`brackets.ts`](./src/brackets.ts) we run an algorith to detect whether a given bracket statement is valid or not.
 
 For example `()(()())` is valid while `()())(` is not.
 
