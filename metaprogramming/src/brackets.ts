@@ -11,13 +11,13 @@ type State<TNumber extends AnyNumber> = {
 type BracketNextState<TInput, TState extends State<any>> = {
   true: {
     openBrackets: TState["openBrackets"];
-    valid: IsZero<TState["openBrackets"]>;
+    valid: TState["valid"];
     halt: "true";
   };
   false: {
     true: {
       openBrackets: Next<TState["openBrackets"]>;
-      valid: "true";
+      valid: "false";
       halt: "false";
     };
     false: {
@@ -28,7 +28,7 @@ type BracketNextState<TInput, TState extends State<any>> = {
       };
       false: {
         openBrackets: Prev<TState["openBrackets"]>;
-        valid: "true";
+        valid: IsZero<Prev<TState["openBrackets"]>>;
         halt: "false";
       };
     }[IsZero<TState["openBrackets"]>];
